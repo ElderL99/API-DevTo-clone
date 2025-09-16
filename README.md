@@ -18,24 +18,7 @@ This is a **Dev.to Clone CRUD** developed with **Node.js**, **Express**, and **M
 
 ---
 
-## Project Structure
 
-/src
-├── domain/
-│ ├── entities/ # Domain models
-│ └── usecases/ # Business logic
-├── infra/
-│ └── db/ # MongoDB connection
-├── interfaces/
-│ └── http/
-│ ├── controllers/ # Controllers (optional)
-│ ├── middlewares/
-│ │ └── auth/ # JWT authentication middleware
-│ └── routes/
-│ ├── auth.js
-│ ├── post.js
-│ └── user.js
-└── index.js
 
 ### Clean Architecture
 
