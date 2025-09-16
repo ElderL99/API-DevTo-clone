@@ -1,5 +1,5 @@
 const express = require("express");
-const userCases = require("../usecases/user.useCases");
+const userCases = require("../../src/usecases/user.useCases");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
