@@ -1,11 +1,6 @@
 const express = require("express");
 const userCases = require("../usecases/user.useCases");
-const auth = require("../middlewares/auth/auth");
 const router = express.Router();
-
-// Registro
-
-// Login
 
 router.post("/", async (req, res) => {
   try {
