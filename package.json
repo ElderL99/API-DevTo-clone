@@ -1,0 +1,37 @@
+{
+  "name": "api-devto",
+  "version": "1.0.0",
+  "description": "This API will reply Dev.To system using MongoDB , express, cors, JWT, encrypting and routes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ https://github.com/ElderL99/API-DevTo-clone.git"
+  },
+  "keywords": [
+    "Express",
+    "Routes",
+    "JWT",
+    "CORS",
+    "HELMET"
+  ],
+  "author": "@ElderL99",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElderL99/API-DevTo-clone/issues"
+  },
+  "homepage": "https://github.com/ElderL99/API-DevTo-clone#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.1"
+  }
+}
