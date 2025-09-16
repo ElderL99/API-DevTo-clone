@@ -1,16 +1,13 @@
-const bcrypt = require("bcryptjs");
+const jsonwebtoken = require("jsonwebtoken");
 
-const SALT_ROUNDS = 10;
+const secret = process.env.JWT_SECRET;
 
-const encrypt = (planText) => {
-  return bcrypt.hashSync(planText, SALT_ROUNDS);
+const sing = (payload) => {
+  return jsonwebtoken.sign(payload, secret, { expiresIn: "1h" });
 };
 
-const compareText = (planText, hash) => {
-  return bcrypt.compareSync(planText, hash);
+const verify = (token) => {
+  return jsonwebtoken.verify(token, secret);
 };
 
-module.exports = {
-  encrypt,
-  compareText,
-};
+module.exports = { sing, verify };
