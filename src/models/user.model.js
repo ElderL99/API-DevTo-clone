@@ -17,9 +17,8 @@ const UserSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      match: RegExp(
-        "/^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&]{8,15}/"
-      ),
+      requried: true,
+      select: false,
     },
   },
   { timestamps: true }
