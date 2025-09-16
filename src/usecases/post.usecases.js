@@ -2,10 +2,16 @@ const PostModel = require("../models/post.model");
 const createError = require("http-errors");
 
 const getAllPost = async () => {
-  const allPost = await PostModel.find({});
+  const allPost = await PostModel.find({}).populate("user");
   return allPost;
 };
 
+const getPostById = async (id) => {
+  const getPost = await PostModel.findById(id).populate("user");
+  if (!getPost) throw createError(404, "Post not found");
+
+  return getPost;
+};
 const createPost = async (data, currentUserId) => {
   const title = data.title;
   const body = data.body;
@@ -26,6 +32,9 @@ const updatePostById = async (id, newData, currentUserId) => {
   if (post.user.toString() !== currentUserId) {
     throw createError(403, "You are not authorized to update this post");
   }
+
+  const user = newData.user;
+  if (user) throw createError(400, "not allow chance de user");
 
   const updatedPost = await PostModel.findByIdAndUpdate(id, newData, {
     new: true,
@@ -48,6 +57,7 @@ const deletePostById = async (id, currentUserId) => {
 
 module.exports = {
   getAllPost,
+  getPostById,
   createPost,
   updatePostById,
   deletePostById,
