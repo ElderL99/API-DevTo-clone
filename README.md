@@ -92,7 +92,7 @@ This is a **Dev.to Clone CRUD** developed with **Node.js**, **Express**, and **M
 
 ```bash
 
-git clone <tu-repo-url>
+git clone git@github.com:ElderL99/API-DevTo-clone.git
 
 ```
 
